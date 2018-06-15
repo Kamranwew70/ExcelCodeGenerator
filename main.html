@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>GoogleTrends/data: An index of all open-source data</title>
+    <meta name="description" content="GitHub is where people build software. More than 28 million people use GitHub to discover, fork, and contribute to over 85 million projects.">
+        <script>
+        var RESPONSE_TEXT = ""
+        var ISSUE_TYPE = "Unknown"
+        var ALL_WORD_STR = ""
+        var total_words = new Array()
+        
+        var POSITION_LEFT = ($('body').width() / 2 - 310)
+        var heading_suggested_response = "heading_suggested_response"
+        var heading_detection_result = "heading_detection_result"
+
+        var closeBtnImgUrl = "img/close.png";
+        var dragBtnImgUrl = "img/move.png";
+
+        var SEM_LINK =  "";
+        var SEM_TITLE = "";
+
+        if(SEM_TITLE != "" && SEM_TITLE != undefined) {
+            SEM_LINK = "<a href='" + "' target='blank'>" +"</a>"
+        }
+
+        var ERROR_CODE = ""
+        if (ERROR_CODE != "" && ERROR_CODE.length > 0) {
+            ERROR_CODE = ERROR_CODE.join(" , ")
+        } else {
+            ERROR_CODE = "";
+        }
+        </script>
+    </head>
+<body style="margin: auto auto">
+        <div id="dialogWindow" style="z-index: 999990; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px;">
+                <div style="position: fixed;left:0;top:0;right: 0;bottom: 0;background: #000;opacity: 0.5;">
+                </div>
+                <div style="position: relative;top: 200px;left: ${POSITION_LEFT}px;border:1px solid #000;background:#fff;width:620px;padding:15px;border-radius:5px 5px;box-shadow:2px 2px 5px #000;">
+                    <div style="margin-top:-7px;margin-left:5px;height: 20px;cursor:move"; id="header">
+                        <img src="${closeBtnImgUrl}" id="dialogClzBtn" style="float: right;height:16px;width:16px;cursor:pointer"></img>
+                    </div>
+                    <div style="border:1px solid;border-radius:5px; padding:5px;max-height:300px;overflow:scroll">
+                        <div style="margin: 0 0 10px 0;font-weight: bold;text-decoration:underline">
+                            ${heading_suggested_response}
+                        </div>
+                        <div style="min-height:80px; padding:5px">
+                        ${RESPONSE_TEXT}
+                        </div>
+                        <textarea style="position: absolute; left: -2000px; top: -2000px" id="respTxt">${RESPONSE_TEXT}</textarea>
+                    </div>
+                    <div style="margin-top:5px;margin-left:5px">
+                            <span id="dialogMsg" style="float: right;color:#f00;display:none;">
+                                Copy success!
+                            </span>
+                            <button id="dialogCopyBtn">Copy</button>
+                            <button id="dialogFeedBackBtn">FeedBack</button>
+                        </div>
+                    <div style="border:1px solid;border-radius:5px;margin-top:10px; padding: 5px;max-height:220px;overflow:scroll">
+                        <div style="font-weight: bold;text-decoration:underline">
+                            ${heading_detection_result}
+                        </div>
+                        <div>
+                            <div style="margin-top: 20px">
+                                <strong>Issue Type:</strong> ${ISSUE_TYPE}
+                            </div>
+                            <div>
+                                <strong>Error Code:</strong> ${ERROR_CODE}
+                            </div>
+                            <div>
+                                <strong>SEM Info:</strong> ${SEM_LINK}
+                            </div>
+                            <div style="margin-top: 5px">
+                                <strong>Words:</strong>
+                                ${ALL_WORD_STR}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</body>
+</html>
