@@ -114,7 +114,7 @@ var BgPageInstance = (function () {
         value2.result = JSON.stringify(value.result)
         value2.run_env = value.run_env
         $.ajax({
-            url: "http://skyaid-data-collector.skyaid-api.trendmicro.org/data/user/event",
+            url: "",
             type: "POST",
             data: JSON.stringify({
                 "app_id": "screenshot_issue_detector",
@@ -143,7 +143,7 @@ var BgPageInstance = (function () {
         lastImgUrl = ""
         lastImgUrl += info.srcUrl
         $.ajax({
-			url: "http://image-issue-detector-shadow.skyaid-service.trendmicro.org/detectimg",
+			url: "",
 			type: "POST",
             data: {"url":lastImgUrl},
             dataType: "json",
@@ -182,7 +182,7 @@ var BgPageInstance = (function () {
         event_value.category = category
         event_value.comment = comment
         $.ajax({
-            url: "http://skyaid-data-collector.skyaid-api.trendmicro.org/data/user/event",
+            url: "",
             type: "POST",
             data: JSON.stringify({
                 "app_id": "screenshot_issue_detector",
