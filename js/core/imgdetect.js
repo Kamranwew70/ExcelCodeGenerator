@@ -30,27 +30,6 @@ var imgDetect = (function () {
             }
         `
 
-        var ok_reply_sample = `
-            {
-                "data": {
-                    "kb_link": "https://esupport.trendmicro.com/support/vb/solution/ja-jp/1115894.aspx",
-                    "kb_title": "特定の機種にウイルスバスターをインストールするとインストールエラー#1603,3002,0x00000000が発生する",
-                    "lang": "japanese",
-                    "type": "Scan Issue",
-                    "wording": {
-                        "window_0": [
-                            "ウイルスバスタークラウド",
-                            "O動作環境の確認",
-                            "ソシリアル番号の入力",
-                            "O使用許諾契約の確認",
-                            ""
-                        ]
-                    }
-                },
-                "desc": "OK",
-                "ret": 0
-            }
-        `
 
         var RESPONSE_TEXT = ""
         var ISSUE_TYPE = "Unknown"
